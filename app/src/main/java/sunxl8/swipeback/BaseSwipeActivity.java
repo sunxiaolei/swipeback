@@ -26,16 +26,16 @@ public abstract class BaseSwipeActivity extends RxAppCompatActivity implements S
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
+        setContentView(setContentViewId());
+        ButterKnife.bind(this);
+        initData();
+        initView();
     }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         mHelper.onPostCreate();
-        setContentView(setContentViewId());
-        ButterKnife.bind(this);
-        initData();
-        initView();
     }
 
     @Override
